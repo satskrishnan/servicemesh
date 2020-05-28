@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+metadata:
+  name: servicemesh
+build:
+  artifacts:
+  - image: sathishkr/servicemesh
+    jib:
+      project: com.digital.istio:servicemesh
+deploy:
+  kubectl:
+    manifests:
+    - k8s/deployment.yaml
+    - k8s/service.yaml
+    - k8s/virtualservice.yaml

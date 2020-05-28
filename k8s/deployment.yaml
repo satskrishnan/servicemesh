@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: servicemesh
+  name: servicemesh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicemesh
+  template:
+    metadata:
+      labels:
+        app: servicemesh
+    spec:
+      containers:
+        - image: sathishkr/servicemesh
+          name: servicemesh
+          ports:
+            - containerPort: 8080
