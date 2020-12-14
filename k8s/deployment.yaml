@@ -4,6 +4,7 @@ metadata:
   labels:
     app: servicemesh
   name: servicemesh
+  namespace: default
 spec:
   replicas: 1
   selector:

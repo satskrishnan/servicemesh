@@ -15,4 +15,13 @@ spec:
       route:
         - destination:
             host: servicemesh
-            port: 3198
+            port: 
+              number: 3198
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: nginx
+            port: 
+              number: 8080
