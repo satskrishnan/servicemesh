@@ -27,12 +27,18 @@ public class ServicemeshApplication {
 
   @RequestMapping(value = "/hello/{name}",method = RequestMethod.GET)
   public String helloMesh(@PathVariable String name) throws InterruptedException {
-    log.info("Going to wait");
-    TimeUnit.SECONDS.sleep(5);
-    log.info("Done");
     return "Hello "+ name +" !";
   }
 
+  @RequestMapping(value = "/sleep/{duration}",method = RequestMethod.GET)
+  public String sleepMesh(@PathVariable int duration) throws InterruptedException {
+    log.info("Going to wait");
+    TimeUnit.SECONDS.sleep(duration);
+    log.info("Done");
+    return "Hello Sathish!";
+  }
+
+  
   @GetMapping("/greeting")
   public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
     return new Greeting(counter.incrementAndGet(), String.format(template, name));
