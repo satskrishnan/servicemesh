@@ -13,3 +13,4 @@ deploy:
     - k8s/deployment.yaml
     - k8s/service.yaml
     - k8s/virtualservice.yaml
+    - k8s/gateway.yaml
